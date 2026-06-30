@@ -10,22 +10,18 @@ It runs `git blame` on any file and fingerprints every commit for signs of AI ag
 
 ## Install
 
-**The clean way (recommended):**
+**Right now, install straight from the repo:**
+
+```bash
+pipx install git+https://github.com/syam000/Was-It-The-Agent.git@claude/agent-script-push-7r3zvs
+```
+
+(or swap `pipx` for `pip` if you don't have it)
+
+**Coming soon, once it's published to PyPI:**
 
 ```bash
 pipx install was-it-the-agent
-```
-
-**Or plain pip:**
-
-```bash
-pip install was-it-the-agent
-```
-
-**Or straight from the repo:**
-
-```bash
-pip install git+https://github.com/syam000/Was-It-The-Agent.git
 ```
 
 No dependencies. Just Python 3.8+ and git.
