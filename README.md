@@ -8,16 +8,27 @@ It runs `git blame` on any file and fingerprints every commit for signs of AI ag
 
 ---
 
-## Install locally
+## Install
+
+**The clean way (recommended):**
 
 ```bash
-git clone https://github.com/syam000/Was-It-The-Agent.git
-cd Was-It-The-Agent
-chmod +x wita.py
-sudo ln -s "$(pwd)/wita.py" /usr/local/bin/wita
+pipx install was-it-the-agent
 ```
 
-That's it. No deps beyond Python 3.8+ and git.
+**Or plain pip:**
+
+```bash
+pip install was-it-the-agent
+```
+
+**Or straight from the repo:**
+
+```bash
+pip install git+https://github.com/syam000/Was-It-The-Agent.git
+```
+
+No dependencies. Just Python 3.8+ and git.
 
 ---
 
