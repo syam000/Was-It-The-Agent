@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "was-it-the-agent"
+version = "0.1.0"
+description = "Tell whether each line of a file was written by a human or an AI coding agent"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "MIT" }
+authors = [{ name = "syam000" }]
+keywords = ["git", "ai", "agent", "blame", "developer-tools"]
+classifiers = [
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Version Control :: Git",
+]
+
+[project.scripts]
+wita = "wita.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["wita*"]
