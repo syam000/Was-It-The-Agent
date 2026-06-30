@@ -13,7 +13,7 @@ It runs `git blame` on any file and fingerprints every commit for signs of AI ag
 **Right now, install straight from the repo:**
 
 ```bash
-pipx install git+https://github.com/syam000/Was-It-The-Agent.git@claude/agent-script-push-7r3zvs
+pipx install git+https://github.com/syam000/Was-It-The-Agent.git@main
 ```
 
 (or swap `pipx` for `pip` if you don't have it)
