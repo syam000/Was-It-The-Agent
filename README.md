@@ -70,4 +70,17 @@ Each line gets a verdict: `AGENT` · `HUMAN` · `MAYBE` — with a confidence le
 
 ---
 
+## Limitations (read this before you trust the verdict)
+
+`wita` doesn't look at *who* committed — it looks at *what the commit message says*. It checks author/committer name, email, message body, and trailers for known agent fingerprints (co-author trailers, generator footers, bot emails). It never checks the actual git account that ran `git commit`.
+
+That means:
+
+- **Agent commits under your own account still get caught** — if the agent leaves its usual trailer (e.g. `Co-Authored-By: Claude <noreply@anthropic.com>`), `wita` flags it `AGENT` even though `git log` shows your name as author.
+- **No fingerprint, no detection** — if a commit message has no trailer or footer (hand-typed, squashed, or from an agent that doesn't self-disclose), `wita` has nothing to match and falls back to `HUMAN`. It's a metadata/convention detector, not a forensic content analyzer — it can't prove code wasn't AI-written, only that nothing in the commit *says* it was.
+
+In short: `wita` trusts agents to disclose themselves. It works great in repos where that convention is followed, and is trivially evaded by anyone who strips the trailer.
+
+---
+
 *Built with vibes. Powered by `git blame`. Fueled by existential curiosity.*
